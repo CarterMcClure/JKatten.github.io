@@ -113,6 +113,12 @@ function loop() {
     if(ball.x > canvas.width){
       scoreRight++;
     }
+    
+    //Make AI paddle
+    while((ball.x < 0 || ball.x > canvas.width) && !ball.resetting) {
+      leftPaddle.height = ball.y; }
+    
+    
     // give some time for the player to recover before launching the ball again
     setTimeout(() => {
       ball.resetting = false;
